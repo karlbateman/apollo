@@ -1,0 +1,17 @@
+<footer class="site-footer">
+    <div class="media-links">
+        {{ with $.Site.Params.Contact }}
+        <address>
+            <a target="_blank" href="mailto:{{ . }}" class="ext-link">Email</a>
+        </address>
+        {{ end }}
+        {{ range $.Site.Menus.footer }}
+        <a target="_blank" href="{{ .URL }}" class="ext-link">{{ .Name }}</a>
+        {{ end }}
+    </div>
+    {{ with $.Site.Params.Copyright }}
+    <p>
+        {{ . | markdownify }}
+    </p>
+    {{ end }}
+</footer>

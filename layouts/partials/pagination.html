@@ -1,0 +1,21 @@
+{{ $between := and .paginator.HasNext .paginator.HasPrev }}
+
+{{ if or .paginator.HasNext .paginator.HasPrev }}
+<div class="pagination">
+    {{ if .paginator.HasNext }}
+    <a href="{{ .paginator.Next.URL }}">
+        ⇽ Older posts
+    </a>
+    {{ end }}
+
+    {{ if $between }}
+    &nbsp;&infin;&nbsp;
+    {{ end }}
+
+    {{ if .paginator.HasPrev }}
+    <a href="{{ .paginator.Prev.URL }}">
+        Newer posts ⇾
+    </a>
+    {{ end }}
+</div>
+{{ end }}

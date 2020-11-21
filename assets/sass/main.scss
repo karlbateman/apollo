@@ -1,0 +1,275 @@
+@charset "utf-8";
+
+@import "./colours";
+@import "./reset";
+@import "./syntax";
+
+html {
+    height: 100%;
+    color: $dark;
+    background-color: white;
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5em;
+}
+
+main {
+    flex: 1 0 auto; // Sticky footer.
+}
+
+article {
+
+    p,
+    img,
+    figure,
+    video,
+    pre,
+    ol,
+    ul {
+        margin-bottom: 1.5em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 0.5em;
+        font-weight: bold;
+    }
+}
+
+nav {
+    flex: 0 1 auto; // Wrap header columns.
+    font-weight: bold;
+
+    .page-link {
+        margin-right: 1.6em;
+    }
+}
+
+a {
+    color: $dark;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid $dark;
+}
+
+ul,
+ol {
+    margin-left: 1em;
+}
+
+h1 {
+    font-size: 1.36em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+h6 {
+    font-size: 0.9em;
+}
+
+blockquote {
+    padding-left: 1em;
+    color: $light;
+    border-left: 1px solid $light;
+}
+
+hr {
+    height: 1px;
+    width: 60px;
+    margin: 1.5em auto;
+    border: none;
+    background: $light;
+}
+
+pre,
+code {
+    font-family: "DejaVu Mono Sans", monospace;
+}
+
+pre {
+    margin: 0 0 1.5em 0 !important;
+    padding: 1px;
+    overflow-x: auto;
+    font-size: 1em;
+    border: 1px solid white;
+    outline: 1px solid black;
+}
+
+code {
+    &.has-jax {
+        background: none !important;
+        font-size: 100%;
+    }
+}
+
+p {
+    code {
+        color: $dark;
+        background: #ECEFF1;
+        padding: 0 3px;
+        font-size: 1em;
+    }
+}
+
+object,
+iframe,
+img,
+video {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+figure>img {
+    display: block;
+}
+
+figcaption {
+    font-size: 0.9em;
+}
+
+address {
+    font-style: normal;
+    float: left;
+}
+
+::selection {
+    background: $dark;
+    color: white;
+}
+
+.site-header {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 4em 0 3em;
+}
+
+.site-title {
+    flex: 1 0 auto; // Wrap header columns.
+    margin: 0 2em 1em 0;
+    font-weight: bold;
+}
+
+.site-footer {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2.5em 0 3em;
+    color: $light;
+    font-size: 0.9em;
+
+    flex-shrink: 0; // Sticky footer (see body, main).
+}
+
+.media-links {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 1em 1em 0;
+
+    flex: 1 0 auto; // Wrap footer columns.
+
+    >address,
+    >a {
+        margin-right: 1em;
+    }
+}
+
+.nav-link,
+.ext-link {
+    margin-bottom: 1px;
+    border-bottom: none;
+
+    &:hover {
+        margin-bottom: 0;
+        border-bottom: 1px solid $dark;
+    }
+}
+
+.post-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    >li {
+        margin-bottom: 1.2em;
+    }
+}
+
+.pagination {
+    text-align: center;
+
+    a {
+        border: none;
+    }
+}
+
+.post-header {
+    margin: 0 0 1.4em;
+
+    >h1 {
+        font-weight: bold;
+    }
+}
+
+.post-meta {
+    color: $light;
+}
+
+.footnotes ol {
+    padding: 1em 0 0 1em;
+    font-size: 0.9em;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.figure-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    img {
+        margin: 1px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        margin: 0 1.4em;
+    }
+
+    .site-header {
+        padding-top: 2em;
+    }
+
+    .site-footer {
+        padding-bottom: 2em;
+    }
+
+    .media-links {
+        // Hack to get media links wrapping.
+        width: 100%;
+    }
+}

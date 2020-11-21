@@ -1,0 +1,5 @@
+{{ $options := (dict "targetPath" "style.css" "outputStyle" "compressed") }}
+{{ $styles := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+{{ $secureStyles := $styles | resources.Fingerprint "sha512" }}
+<link rel="preload" href="{{ $secureStyles.Permalink }}" as="style">
+<link rel="stylesheet" href="{{ $secureStyles.Permalink }}" integrity="{{ $secureStyles.Data.Integrity }}">

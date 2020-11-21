@@ -1,0 +1,14 @@
+<header class="site-header">
+    {{ with $.Site.Params.Logo }}
+    <h2 class="site-title">
+        <a class="nav-link" href="{{ $.Site.Params.Logo.logoHomeLink }}">
+            {{ $.Site.Params.Logo.logoText }}
+        </a>
+    </h2>
+    {{ end }}
+    <nav>
+        {{ range $.Site.Menus.main }}
+        <a href="{{ .URL }}" class="nav-link page-link">{{ .Name }}</a>
+        {{ end }}
+    </nav>
+</header>

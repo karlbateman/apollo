@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $PageContext := . }}
+{{ if .IsHome }}
+    {{ $PageContext = .Site }}
+{{ end }}
+
+{{ $paginator := .Paginate (where $PageContext.RegularPages "Type" "posts") 5 }}
+
+<ul class="post-list">
+    {{ range $paginator.Pages }}
+    <li class="post">
+        <p>
+            <a class="nav-link" href="{{ .Permalink }}">
+                {{ .Title | markdownify }}
+            </a>
+        </p>
+        <h6 class="post-meta">
+            {{ .Date.Format "January 02, 2006" }}
+        </h6>
+    </li>
+    {{ end }}
+</ul>
+
+{{ partial "pagination.html" (dict "context" $PageContext "paginator" $paginator)}}
+{{ end }}

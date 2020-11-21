@@ -1,0 +1,53 @@
+baseURL = "https://example.com"
+defaultContentLanguage = "en"
+
+theme = "apollo"
+
+[languages]
+    [languages.en]
+    languageName = "English"
+    contact = "joe.bloggs@example.com"
+
+    # change this line
+    copyright = "Site content under [CC BY SA](#). Source under [BSD](#)."
+
+    # default HTML page meta
+    title = "Apollo"
+    description = "A simple theme for Hugo"
+    owner = ""
+    keywords = "simple clean mono hugo theme"
+
+    [languages.en.params.logo]
+    logoText = "Apollo"
+    logoHomeLink = "/"
+
+    [languages.en.menu]
+        [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 100
+
+        [[languages.en.menu.main]]
+        identifier = "rss"
+        name = "RSS"
+        url = "/posts/index.xml"
+        weight = 200
+
+        [[languages.en.menu.footer]]
+        identifier = "github"
+        name = "Github"
+        url = "https://github.com"
+        weight = 100
+
+        [[languages.en.menu.footer]]
+        identifier = "gitlab"
+        name = "Gitlab"
+        url = "https://gitlab.com"
+        weight = 200
+
+        [[languages.en.menu.footer]]
+        identifier = "bitbucket"
+        name = "Bitbucket"
+        url = "https://bitbucket.com"
+        weight = 300
